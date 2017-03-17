@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lesson 5 | Task 4</title>
+		<meta name="viewport" content="width=device-width">
+		<meta charset="utf-8">
+		<meta name="description" content="First form">
+	</head>
+	
+	<body>
+		<form action="http://httpbin.org/get" method="get">
+		    <fieldset>
+		    	<legend>Personal data:</legend>
+		    	<table>
+				<tr>
+					<td>Surname </td>
+					<td><input type="text" name="surname"></td>
+				</tr>
+		        <tr>
+					<td>First name </td>
+					<td><input type="text" name="firstname"></td>
+		        </tr>
+				<tr>
+					<td>Middle name </td>
+					<td><input type="text" name="middlename"></td>
+		        </tr>
+		        <tr>
+					<td>You are </td>
+					<td><input type="radio" name="sex" value="male" id="maleRadio" checked><label for = "maleRadio">male</label>
+						<input type="radio" name="sex" value="female" id="femaleRadio"><label for = "femaleRadio">female</label>
+					</td>
+				</tr>
+				<tr>
+					<td>Age </td>
+					<td><input type="number" name="age" min="18" max="101"></td>
+				</tr>
+				<tr>
+					<td>Country of Residence </td>
+					<td><select id="country" name="country">
+						<option value="Russia"> Russia </option>
+						<option value="USA"> USA </option>
+						<option value="UK"> UK </option>
+						<option value="Canada"> Canada </option>
+						<option value="Germany"> Germany </option>
+					</select></td>
+				</tr>
+    		    <tr>
+					<td>City </td>
+					<td><input type="radio" name="city" value="ryazan" id="rznRadio"><label for = "rznRadio">Ryazan</label>
+						<input type="radio" name="city" value="moscow" id="mscRadio"><label for = "mscRadio">Moscow</label>
+					</td>
+				</tr>			
+    		    <tr>
+					<td>Photography </td>
+					<td><input type="file"></td>
+				</tr>
+
+    		    <tr>
+					<td>Title </td>
+					<td> 
+						<select name="title" multiple>
+							<optgroup label="Technologies">
+								<option value="web">Web-Master</option>
+								<option value="db">DataBase administator</option>
+								<option value="cad">Computer-aided design</option>
+							</optgroup>
+							<optgroup label="Economics">
+								<option value="ep">Economic Planning</option>
+								<option value="ma">Management accounting</option>
+								<option value="bp">Budgetting and planning</option>
+							</optgroup>
+						</select>
+					</td>
+				</tr>
+    		    <tr>
+					<td>Salary</td> 
+					<td><input type="range" min="1" max="50" id="salary" value="25"></td>
+				</tr>
+			    <tr>
+					<td colspan=2>
+						<textarea name="message" rows="10" cols="50" placeholder="Tell us about yourself...">
+						</textarea>
+					</td>
+  				</tr>
+				</table>
+		    </fieldset>
+		    
+		    <fieldset>
+			    <legend>Personal information:</legend>
+			    <table>
+					<tr>
+						<td>Site</td> 
+						<td><input type="text" name="site"></td>
+					</tr>
+					<tr>
+						<td>Email </td>
+						<td><input type="email" name="email"></td>
+					</tr>
+					<tr>
+						<td>Phone </td>
+						<td><input type="tel" name="tel"></td>
+					</tr>
+				</table>
+		    </fieldset>
+			<br>
+			Password <input type="password" maxlength="15" size="15" name="password" required >
+			<br><br>
+		    <input type="submit" value="Submit">
+		    <input type="reset" value="Reset">
+  		</form>
+	</body>
+</html>
