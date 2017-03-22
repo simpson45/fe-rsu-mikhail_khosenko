@@ -1,0 +1,76 @@
+h1 {
+	padding: 65px; 
+	width: 25px; 
+	margin-bottom: 20px;
+}
+
+h2 {
+	background-color: red; 
+	text-decoration: underline;
+}
+
+h3 {
+	font-size: 80px; 
+	color: red; 
+	direction:rtl;
+}
+
+h4 {
+	height: 3rem; 
+	font-variant: small-caps; 
+}
+
+h5 {
+	padding: 100px; 
+	font-family:  sans-serif; 
+	letter-spacing: 10px;
+}
+
+h6 {
+	font-family: serif; 
+	font-size: 2em;
+}
+
+.url-link {
+	font-weight:900; 
+	background-image: url(https://image.freepik.com/free-vector/abstract-background-with-a-watercolor-texture_1048-2144.jpg); 
+	background-repeat: repeat;
+}
+
+.text-p {
+	text-transform: uppercase; text-align: center;
+}
+
+.par-one {
+	height: 200px;  
+	background-color: rgba(67, 135, 225, .6); 
+	text-align: right; 
+	font-size: 22px;
+}
+
+.text-p1 {
+	text-decoration: line-through;
+}
+
+.par-two {
+	margin-top: 10px; 
+	width: 100px;  
+	background-color: #ccc; 
+	font-style: italic; 
+	white-space: pre-line;
+}
+
+.text-p2 {
+	text-indent: 2em;
+}
+
+.text-p3 {
+	text-transform: lowercase;
+}
+
+.par-three {
+	vertical-align: super; 
+	line-height: 200px; 
+	text-shadow: 0 0 20px rgba(0, 120, 200, 1), 0 0 20px rgba(0, 120, 00, 1); 
+	word-spacing: 50px;
+}
