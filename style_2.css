@@ -1,0 +1,35 @@
+table {
+	border: 1px solid white;
+	color: #758697;
+	font-family:sans-serif;
+}
+
+tr, td {
+	padding: 13px;
+}
+
+th {
+	padding: 5px;
+	font-size: 12px;
+	font-weight: 700;
+}
+
+tr:nth-of-type(2n){
+	background-color: #f2f6fa;
+}
+
+tr:nth-of-type(2n+1){
+	background-color: #e3eaf3;
+}
+
+tr:first-child{
+	text-transform: uppercase;
+}
+
+tr td:first-child {
+	text-transform: capitalize;
+}
+
+table tr:not(:first-child):hover{
+    background-color: #e2e5e9;
+}
