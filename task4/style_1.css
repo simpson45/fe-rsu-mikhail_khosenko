@@ -1,0 +1,17 @@
+.frame{
+	width: 200px;
+	margin-top:50px;
+	margin: 50px;
+	border: 2px solid #ccc;
+	padding:100px;
+}
+
+.ball{
+	margin:40px;
+	border: 4px solid #02fbe6;
+	background-color: #02fbe6;
+	border-radius:50%;
+	padding:45px 55px;
+}
+
+

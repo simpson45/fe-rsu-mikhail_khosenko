@@ -1,0 +1,60 @@
+.element {
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+  background: linear-gradient(to top, #fefcea, #f1da36);
+  animation-name: stretch;
+  animation-duration: 7.5s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(1);
+	background: linear-gradient(to top, #fefcea, #f1da36);
+    border-radius: 100%;
+  }
+  
+  15% {
+	border-radius: 0%;
+	transform: rotate(0deg); 
+  }
+  
+  
+  50% {
+    background: linear-gradient(to top, #D06666, #b20000);
+  }
+  
+  75% {
+	transform: rotate(0deg); 
+	transform: scale(1.5);
+
+  }
+  
+  85% {
+	transform: rotate(57deg);
+	border-radius: 0%;
+  }
+  
+  100% {
+    transform: scale(1);
+	background: linear-gradient(to top, #fefcea, #f1da36);
+    border-radius: 100%; 
+  }
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

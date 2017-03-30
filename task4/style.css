@@ -1,0 +1,26 @@
+body {
+	background-color:#f2d5ff;
+}
+
+.myButton {
+	width:70px;
+	background:linear-gradient(to top, #8d95c7, #595fe8, #8d95c7);
+	background-color:#878fcb;
+	border-radius:20px;
+	border:3px solid #ffffff;
+	border-style:double;
+	display:inline-block;
+	margin:200px 100px;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	padding:13px 70px;
+	text-decoration:none;
+	transition: box-shadow 0.7s ease-in-out;
+	
+}
+.myButton:hover {
+	cursor:pointer;
+	box-shadow: 0 0px 120px #37E1C9;
+}
+

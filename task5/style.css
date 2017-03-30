@@ -1,0 +1,21 @@
+.paragraph-adaptive{
+	background-color:#cad8d0;
+	margin-top:20px;
+	width:800px;
+	margin-right:5px;
+	font-size:12px;
+	padding: 11px;
+}
+
+@media screen and (max-width: 500px){
+
+.paragraph-adaptive{
+	background-color:#cad8d0;
+	margin-top:20px;
+	margin-right:5px;
+	width:200px;
+	font-size:20px;
+	padding: 11px;
+}
+
+}

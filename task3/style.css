@@ -1,0 +1,32 @@
+.link-text{
+	font-size:34px;
+	color: blue;
+	transition-property: border-bottom;
+	transition-duration: .5s;
+	transition-timing-function: ease-in-out;
+	transition-delay: .1s;
+}
+
+.link-text:after{
+	content: " | ";
+	color:red;
+	transition-duration: .5s;
+	transition-timing-function: ease-in-out;
+	transition-delay: .1s;
+}
+
+.link-text:last-child:after{
+	content: none;
+}
+
+.link-text:hover{
+	border-bottom: 5px solid blue;
+}
+
+.link-text:hover:after{
+	content: " | ";
+	opacity: 0;
+	transition-duration: 0s;
+	transition-timing-function: ease-in-out;
+	transition-delay: 0s;
+}

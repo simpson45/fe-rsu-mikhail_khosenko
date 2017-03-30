@@ -1,0 +1,19 @@
+.paragraph-one{
+	background-color:#569099;
+	margin-top:20px;
+	margin-right:5px;
+	width:315px;
+	color: white;
+	font-size:32px;
+	font-weight:900;
+	padding: 18px 10px;
+}
+
+.paragraph-two{
+	background-color:#cad8d0;
+	margin-top:20px;
+	margin-right:5px;
+	width:315px;
+	font-size:16px;
+	padding: 11px;
+}
