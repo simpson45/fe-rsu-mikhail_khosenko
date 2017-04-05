@@ -1,0 +1,36 @@
+.link-text{
+	font-size:34px;
+	color: blue;
+	border-bottom: 0px solid blue;
+	transition-duration: .2s;
+	transition-timing-function: ease-in-out;
+	transition-delay: .5s;
+}
+
+.link-text:after{
+	content: " | ";
+	color:red;
+	transition-duration: .5s;
+	transition-timing-function: ease-in-out;
+	transition-delay: .1s;
+}
+
+.link-text:last-child:after{
+	content: none;
+}
+
+.link-text:hover{
+	border-bottom: 5px solid blue;
+	transition-duration: .5s;
+	transition-timing-function: ease-in-out;
+	transition-delay: .1s;
+}
+
+.link-text:hover:after{
+	content: " | ";
+
+	opacity: 0;
+	transition-duration: 1s;
+	transition-timing-function: ease-in-out;
+	transition-delay: .2s;
+}
