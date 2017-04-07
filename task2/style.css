@@ -1,19 +1,33 @@
-.paragraph-one{
-	background-color:#569099;
-	margin-top:20px;
-	margin-right:5px;
-	width:315px;
-	color: white;
-	font-size:32px;
-	font-weight:900;
-	padding: 18px 10px;
+.arrow-box {
+   margin-top:100px;
+   background: #88b7d5;
+   border: 4px solid #c2e1f5;
+   position: relative;
+   padding: 10px;
+   width: 300px;
+   text-align: left;
+   margin-bottom: 10px;
+   color:white;
+   
 }
-
-.paragraph-two{
-	background-color:#cad8d0;
-	margin-top:20px;
-	margin-right:5px;
-	width:315px;
-	font-size:16px;
-	padding: 11px;
+ 
+.arrow-box:after,
+.arrow-box:before {
+   content: '';
+   border: solid transparent;
+   position: absolute;
+   left: 50%;
+   margin-left: -12px;
+   bottom: 112px;
+   width: 0;
+}
+.arrow-box:before {
+   border-bottom-color: #c2e1f5;
+   border-width: 30px;
+   left: 47%;
+}
+.arrow-box:after {
+   border-bottom-color: #88b7d5;
+   border-width: 24px;
+   margin-left: -16px;
 }

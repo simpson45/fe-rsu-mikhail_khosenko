@@ -1,105 +1,41 @@
-* {
-  margin: 0;
-  padding: 0;
-  transition: all 0.5s;
+#container{
+	display:flex;
+	width:300px;
+	padding:5px;
+	background-color:#a0dfd1;
+	border: 3px solid #6aad9e;
+	border-radius:5px;
 }
 
-#container {
-  width: 330px;
-  margin: 25px auto;
+#container .block {
+	background-color:#e5e5e5;
+	border: 1px solid #61c6af;
+	justify-content: center;
 }
 
-h1 {
-  color: #333;
-  font-size: 2.5em;
-  text-align: center;
-  margin-bottom: 40px;
-}
+.header {
+    border: 1px solid #ffca00;
+    padding: 10px;
+    position: relative;
+	background-color:#ffca00;
+	font-family:sans-serif;
+   }
+.header::before, .block::after {
+    content: ''; 
+    position: absolute;
+    left: 20px; bottom: -20px;
+    border: 10px solid transparent;
+    border-top: 10px solid #ffca00;
+   }
+.header::after {
+    border-top: 10px solid white;
+    bottom: -19px; 
+   }
 
-h1:hover {
-  font-size: 2.5em;
-}
-
-h1:hover:before,
-h1:hover:after {
-  font-style: italic;
-  font-size: 0.5em;
-}
-
-button {
-  width: 100px;
-  height: 100px;
-  color: #ffffff;
-  background-color: #3498db;
-  font-family: Open Sans Condensed;
-  text-decoration: none;
-  font-size: 1.1em;
-  font-family: sans-serif;
-  border: 2px #ffffff solid;
-  margin: 10px 0 0 5px;
-  transition: all 0.5s;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-.highlight:hover {
-  background-color: #FFffff;
-  color: #3498db;
-}
-
-.fade:hover {
-  border: 0px;
-  color: #009999;
-  opacity: 0;
-}
-
-.boom:hover {
-  color: #009999;
-  border: #009999;
-  opacity: 0;
-  transform: scale(2, 2);
-}
-
-.focus:hover {
-  border-width: 20px;
-}
-
-.rotate:hover {
-  transform: rotate(90deg);
-}
-
-.knit:hover {
-  height: 0px;
-}
-
-.shrink:hover {
-  transform: scale(0.0, 0.0);
-}
-
-.squeeze:hover {
-  transform: scale(1.5, 0.0);
-}
-
-.deform:hover {
-  transform: skew(45deg, 45deg);
-}
-
-@media (max-width: 330px) {
-  #container {
-    width: 100%;
-  }
-  button {
-    width: 90%;
-    margin: 5% 0 0 5%;
-  }
-}
-
-img {
-	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
-	margin-left:200px;
-	margin-top:200px;
-	width:200px;
-    height: auto;
+.text {
+	padding:10px;
+	font-family:sans-serif;
+	font-size:12px;
+	color: #6aad9e;
+	background-color:#edecde;
 }
