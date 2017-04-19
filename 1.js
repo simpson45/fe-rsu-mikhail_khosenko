@@ -40,17 +40,15 @@ console.log(Math.ceil((cmas.getTime() - today.getTime()) / (one_day)) + " days l
 console.log("--------------------------");
 // TASK 5
 console.log("----------TASK 5----------");
-is_array = function(input) {
-    if (toString.call(input) === "[object Array]")
-        return true;
-    return false;
-};
+function is_array(a) {
+    return Array.isArray(a);
+}
 console.log(is_array([23, 12, 84, 2, 4, 2]));
 console.log(is_array("qwerty"));
 console.log("--------------------------");
 // TASK 6
 console.log("----------TASK 6----------");
-array_Clone = function(arra1) {
+var array_Clone = function(arra1) {
     return arra1.slice(0);
 };
 console.log(array_Clone([9, 8, 7, 6]));
@@ -78,7 +76,7 @@ console.log("--------------------------");
 
 // TASK 8
 console.log("----------TASK 8----------");
-str = "mIKHAIL kHOSENKO";
+var str = "mIKHAIL kHOSENKO";
 var UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var LOWER = "abcdefghijklmnopqrstuvwxyz";
 var result = [];
@@ -254,8 +252,8 @@ console.log("--------------------------");
 // TASK 17
 console.log("----------TASK 17----------");
 var date_diff_indays = function(date1, date2) {
-    dt1 = new Date(date1);
-    dt2 = new Date(date2);
+    var dt1 = new Date(date1);
+    var dt2 = new Date(date2);
     return Math.floor((Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) - Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate())) / (1000 * 60 * 60 * 24));
 };
 console.log(date_diff_indays("14/04/2017", "14/04/2016"));
@@ -281,7 +279,7 @@ console.log("--------------------------");
 
 // TASK 19
 console.log("----------TASK 19----------");
-string_to_array = function(str) {
+var string_to_array = function(str) {
     return str.trim().split(" ");
 };
 console.log(string_to_array("Mikhail Khosenko"));
@@ -300,7 +298,7 @@ console.log("--------------------------");
 
 // TASK 21
 console.log("----------TASK 21----------");
-camelize = function camelize(str) {
+var camelize = function camelize(str) {
     return str.replace(/\W+(.)/g, function(match, chr) {
         return chr.toUpperCase();
     });
@@ -315,8 +313,6 @@ console.log("--------------------------");
 console.log("----------TASK 22----------");
 
 function max(input) {
-    if (toString.call(input) !== "[object Array]")
-        return false;
     return Math.max.apply(null, input);
 }
 
@@ -328,8 +324,6 @@ console.log("--------------------------");
 console.log("----------TASK 23----------");
 
 function min(input) {
-    if (toString.call(input) !== "[object Array]")
-        return false;
     return Math.min.apply(null, input);
 }
 console.log(min([12, 34, 56, 1]));
@@ -354,9 +348,6 @@ console.log("--------------------------");
 console.log("----------TASK 25----------");
 
 function sum(input) {
-    if (toString.call(input) !== "[object Array]")
-        return false;
-
     var total = 0;
     for (var i = 0; i < input.length; i++) {
         if (isNaN(input[i])) {
@@ -395,12 +386,12 @@ console.log("--------------------------");
 // TASK 27
 console.log("----------TASK 27----------");
 
-function _keys(obj) {
+function a_keys(obj) {
     if (!isObject(obj)) return [];
     if (Object.keys) return Object.keys(obj);
     var keys = [];
     for (var key in obj)
-        if (_.has(obj, key)) keys.push(key);
+        if (Object.has(obj, key)) keys.push(key);
     return keys;
 }
 
@@ -408,7 +399,7 @@ function isObject(obj) {
     var type = typeof obj;
     return type === "function" || type === "object" && !!obj;
 }
-console.log(_keys({
+console.log(a_keys({
     red: "#FF0000",
     green: "#00FF00",
     white: "#FFFFFF"
