@@ -1,62 +1,63 @@
-var Calculator = (function (initialState) {
-    "use strict";
+"use strict";
 
-    var currentValue = initialState;
+function Calculator() {
+    this.currentValue = 0;	
+}
 
-    function getResult() {
-        return currentValue;
-    }
+Calculator.prototype.getResult = function() {
+    return this.currentValue;
+}
 
-    function reset() {
-        currentValue = 0;
-        return this;
-    }
+Calculator.prototype.reset = function() {
+    this.currentValue = 0;
+    return this;
+}
 
-    function add(value) {
-        currentValue += value;
-        return this;
-    }
+Calculator.prototype.add = function(value) {
+    this.currentValue += value;
+    return this;
+}
 
-    function substract(value) {
-        currentValue -= value;
-        return this;
-    }
+Calculator.prototype.substract = function(value) {
+    this.currentValue -= value;
+    return this;
+}
 
-    function multiply(value) {
-        currentValue *= value;
-        return this;
-    }
+Calculator.prototype.multiply = function(value) {
+    this.currentValue *= value;
+    return this;
+}
 
-    function divide(value) {
-        currentValue /= value;
-        return this;
-    }
+Calculator.prototype.divide = function(value) {
+    this.currentValue /= value;
+    return this;
+}
 
-    function getInitialState(callback) {
+Calculator.prototype.getInitialState = function(callback) {
         setTimeout(function () {
-            callback()
-        }, 500);
-    }
+			this.currentValue = 5;
+            callback();
+        }.bind(this), 500);
+}
 
-    return {
-        getResult: getResult,
-        reset: reset,
-        add: add,
-        substract: substract,
-        multiply: multiply,
-        divide: divide,
-        getInitialState: getInitialState
-    };
-})(0);
+var CalcTool = new Calculator();
 
-console.log(Calculator.add(4).reset().add(6).multiply(4).getResult());
+console.log(CalcTool.add(4).reset().add(6).multiply(4).getResult());
 
-Calculator.getInitialState(function () {
-    console.log(Calculator.getResult())
+CalcTool.getInitialState(function () {
+    console.log(CalcTool.getResult())
 })
 
-function bind(f, context) {
+//bind function
+function bind(func, context) {
     return function() {
-        return f.apply(context, arguments);
+        return func.apply(context, arguments);
     };
 }
+
+function checkFunc() {
+    console.log(this);
+}
+
+var ch = bind(checkFunc, "Checking");
+ch();
