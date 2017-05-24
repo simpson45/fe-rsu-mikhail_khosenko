@@ -108,7 +108,7 @@ h1, h2, h3, h4, h5, h6,
 	display: none !important;
 }
 
-.modal-w{
+.modal{
 	position: absolute;
 	z-index: 1;
 	width: 100%;
@@ -127,7 +127,7 @@ h1, h2, h3, h4, h5, h6,
 	display: block;
 	position: relative;
 	top: -165px;
-	left: 400px;
+	right: 10px;
 	z-index: 1;
 	width: 20px;
 	height: 20px;
@@ -345,6 +345,23 @@ h1, h2, h3, h4, h5, h6,
 	padding: 0 10px;
 }
 
+#button-load_books {
+	height:30px;
+}
+
+ul {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+li {
+	margin: 9px;
+	padding: 1px;	
+	border-radius: 7px;
+	transition: .3s;
+	list-style-type: none;
+}
+
 .preview{
 	margin: 9px;
 	padding: 1px;	
@@ -381,7 +398,6 @@ h1, h2, h3, h4, h5, h6,
 .rating{
 	color: #ffab00;
 	font-size: 14px;
-	margin: 8px 0;
 }
 
 .rating:hover {
