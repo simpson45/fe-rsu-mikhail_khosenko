@@ -127,7 +127,7 @@ h1, h2, h3, h4, h5, h6,
 	display: block;
 	position: relative;
 	top: -165px;
-	left: 400px;
+	left: 40px;
 	z-index: 1;
 	width: 20px;
 	height: 20px;
@@ -139,6 +139,26 @@ h1, h2, h3, h4, h5, h6,
 
 .close-modal:hover{
 	cursor: pointer;
+}
+
+.book-parameters{
+	box-sizing: border-box;
+		width: 440px;
+		height: 330px;
+	padding: 20px 30px 50px;
+	background-color: #fff;
+	overflow-y: scroll;
+}
+
+.book-parameters table{
+	margin: 0 auto;
+	width: 330px;
+	/*border: solid 1px red;*/
+}
+
+.book-parameters td{
+	padding: 7px;
+	vertical-align: top;
 }
 
 .new-book{
