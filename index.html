@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<title>Lesson 18 | JS Async</title>
+</head>
+<body>
+
+		<header class="header">
+			<nav class="header-menu header-menu__item--top">
+				<a class="header-menu__item" href="#">Help Center</a>
+				<a class="header-menu__item" href="#">Our Support</a>
+			</nav>
+			<button class="button button--accent" type="button" name="authorization">
+				<span class="button__wrapper">
+					<img class="button__image" src="img/avatar.png" alt="user photo">
+					<span class="button__text">John Doe</span>
+					<i class="fa fa-chevron-circle-down"></i>
+				</span>
+			</button>
+		</header>    
+    
+    <div class="page-content">
+        <aside class="sidebar">
+            <div class="panel add-section">                                 
+                <button class="button button--add" id="add-book-button">
+					<i class="fa fa-plus button__wrapper" aria-hidden="true"></i> 
+					<span class="button__text">Add a book</span>
+				</button>  
+            </div>
+			
+            <div class="add-book-window" id="add-book-window">                
+                <div class="add-book-window__content">
+                    <div class="add-book-window__header">
+                        <span class="add-book-window__title">Add a book</span>
+                        <span class="add-book-window__close" id="add-book-window-close">&times;</span>
+                    </div>                    
+                    <form class="add-book-window__form" name="addNewBookForm" id="addNewBookForm" method="POST" encType="multipart/form-data">
+                        <div class="add-book-window__inputs-fields">
+                            <div class="add-book-window__row">
+                                <label for="bookTitle" class="add-book-window__label">Name of the book:</label>
+                                <input type="text" class="add-book-window__input" id="bookTitle" name="bookTitle" placeholder="Enter name of the book">
+                            </div>
+                            <div class="add-book-window__row">
+                                <label for="bookAuthor" class="add-book-window__label">Author:</label>
+                                <input type="text" class="add-book-window__input" id="bookAuthor" name="bookAuthor" placeholder="Enter an author of the book">
+                            </div>                            
+                            <label for="BookCover" class="add-book-window__label">Select an image:</label>
+                        </div>
+                        <input type="file" class="add-book-window__input-file" id="bookCover" name="bookCover">
+                        <div class="add-book-window__button-field">
+                            <button class="add-book-window__button" type="submit"><i class="fa fa-plus add-book__plus" aria-hidden="true"></i> <span class="add-book-window__text">add a book</span></button>
+                        </div>                        
+                    </form>
+                </div> 
+                <div class="add-book-window__text-success">Successfuly added</div>
+                <div class="add-book-window__text-error">Something went wrong</div>
+            </div> 
+			
+			<div class="panel">
+				<nav class="navigation--main">
+					<a class="navigation__item reference reference--non-underlined" href="#">
+						<i class="fa fa-book"></i>
+						<span>Now reading</span>
+					</a>
+					<a class="navigation__item reference reference--non-underlined current" href="#" id="browse-book">
+						<i class="fa fa-globe"></i>
+						<span>Browse</span>
+					</a>
+					<a class="navigation__item reference reference--non-underlined" href="#">
+						<i class="fa fa-shopping-cart"></i>
+						<span>Buy books</span>
+					</a>
+					<a class="navigation__item reference reference--non-underlined" href="#">
+						<i class="fa fa-star"></i>
+						<span>Favourite books</span>
+					</a>
+					<a class="navigation__item reference reference--non-underlined" href="#">
+						<i class="fa fa-th-list"></i>
+						<span>Wishlist</span>
+					</a>
+					<a class="navigation__item reference reference--non-underlined" href="#" id="history-book">
+						<i class="fa fa-clock-o"></i>
+						<span>History</span>
+					</a>
+				</nav>
+			</div>
+			
+			<div class="panel">
+				<ul class="categories">
+					<li class="category category--red-bullet">
+						<a class="navigation__item reference" href="#">Must read titles</a>
+					</li>
+					<li class="category category--yellow-bullet">
+						<a class="navigation__item reference" href="#">Best of list</a>
+					</li>
+					<li class="category category--skyblue-bullet">
+						<a class="navigation__item reference" href="#">Classic novels</a>
+					</li>
+					<li class="category category--violet-bullet">
+						<a class="navigation__item reference" href="#">Non fiction</a>
+					</li>
+				</ul>
+			</div>
+			
+			<!--<div class="panel">
+				<div class="history__item">
+					<p class="p--reduced-vertical-margin"><i class="fa fa-clock-o"></i></p>
+					<div class="history__item-description">
+						<p class="p--reduced-vertical-margin">
+							You added 
+								<a class="reference reference--bright" href="#">Fight Club</a> 
+							by 
+								<a class="reference reference--bright" href="#">Chuck Palahniuk</a> 
+							to your 
+								<a class="reference reference--bright" href="#">Must Read Titles</a>.
+						</p>
+						<p class="p--reduced-vertical-margin">24 minutes ago</p>
+					</div>
+				</div>
+				<div class="history__item">
+					<p class="p--reduced-vertical-margin"><i class="fa fa-clock-o"></i></p>
+					<div class="history__item-description">
+						<p class="p--reduced-vertical-margin">
+							You added 
+								<a class="reference reference--bright" href="#">The Trial</a> 
+							by 
+								<a class="reference reference--bright" href="#">Franz Kafka</a> 
+							to your 
+								<a class="reference reference--bright" href="#">Must Read Titles</a>.
+						</p>
+						<p class="p--reduced-vertical-margin">48 minutes ago</p>
+					</div>
+				</div>
+			</div>-->
+			
+            <div class="notification" id="notification">
+            </div>
+			
+        </aside>
+		
+        <section class="content" id="page-content">
+            <div class="search-panel">
+                 <h2 class="content-header">Browse Available Books</h2>
+                 <div class="filter">
+                     <div class="filter__group">
+                         <div class="filter__item">All books</div>
+                         <div class="filter__item">Most recent</div>
+                         <div class="filter__item" id="most-popular-filter">Most popular</div>
+                         <div class="filter__item">Free books</div>
+                     </div>                             
+                     <div class="search">
+                         <input type="text" class="search__input" id="search" placeholder="Enter Keywords">
+                         <label for="search" class="search__label"><i class="fa fa-search" aria-hidden="true"></i></label>
+                     </div>
+                 </div>
+                 
+            </div>
+			
+            <div class="books">                     
+            </div>
+			
+            <!--<div class="book-info" id="book-info">
+                <div class="book-info__content">
+                    <div class="book-info__header">
+                        <span class="book-info__title">book info</span>
+                        <span class="book-info__close" id="book-info-close">&times;</span>
+                    </div>
+                    <div class="book-info__body">                       
+                        <img class="book-info__book-cover" src="" alt="">      
+                        <div class="book-info__about">
+                            <div class="book-info__book-name"></div>
+                            <div class="book-info__book-author"></div>
+                            <div class="tags" id="tags">                                
+                            </div>
+                            <div class="book-info__add-tag">
+                                <label for="new-tag-name" class="book-info__label">Add tag:</label>
+                                <input type="text" class="book-info__input" id="new-tag-name-input" name="new-tag-name" placeholder="Enter tag name" list="default-tags">  
+                                <datalist id="default-tags">                                    
+                                </datalist>
+                                <button class="book-info__button" id="book-info-add-tag-btn">add tag</button>
+                            </div> 
+                        </div>
+                                         
+                    </div>
+                </div>
+            </div>-->
+        </section>
+    </div>
+    
+	<footer class="app-footer">
+		<button class="button" type="button" name="settings">
+			<span class="button__wrapper">
+				<i class="fa fa-question-circle"></i>
+			</span>
+		</button>
+		<button class="button button--accent" type="button" name="settings">
+			<span class="button__wrapper">
+				<i class="fa fa-cog"></i>
+			</span>
+		</button>
+	</footer>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/Model.js"></script>
+    <script src="js/Controller.js"></script>
+    <script src="js/View.js"></script>
+    <script src="js/core.js"></script>   
+  </body>
+</html>
